@@ -1,8 +1,6 @@
 # Same as eval but creates an output.txt file to help visualise results
 # Also I changed line 44 and 45 + commented out some other things
 # Original is the commented out line, new for loop i wrote so we can use out own data
-
-
 import numpy as np
 import pandas as pd
 from stonks import getMyPosition as getPosition
