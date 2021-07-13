@@ -1,5 +1,3 @@
-#!/usr/bin/envblah python
-
 import numpy as np
 import pandas as pd
 from stonks import getMyPosition as getPosition
@@ -79,6 +77,3 @@ print ("mean(PL): %.0lf" % meanpl)
 print ("return: %.5lf" % ret)
 print ("annSharpe(PL): %.2lf " % sharpe)
 print ("totDvolume: %.0lf " % dvol)
-
-
-
