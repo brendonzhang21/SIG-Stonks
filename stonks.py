@@ -17,17 +17,14 @@ def getMyPosition (prcSoFar):
 
     (nins,nt) = prcSoFar.shape
     rpos = np.array([0 for i in range(100)])
-
-    zscores = []
-    x = 8
+    runningAverageTime = 8
     for instrument in range(nins):
         if nt > 1:
-            stdev = np.std(prcSoFar[instrument][nt - x:nt])
+            stdev = np.std(prcSoFar[instrument][nt - runningAverageTime:nt])
             if stdev == 0:
                 z = 0
             else:
-                z = (prcSoFar[instrument][nt-1] - np.mean(prcSoFar[instrument][nt - x:nt]))/np.std(prcSoFar[instrument][nt - x:nt])
-            zscores.append(z)
+                z = (prcSoFar[instrument][nt-1] - np.mean(prcSoFar[instrument][nt - runningAverageTime:nt]))/stdev
 
             if z > 1:
                 rpos[instrument] = -instLimit/prcSoFar[instrument][nt-1]
