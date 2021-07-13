@@ -1,8 +1,4 @@
 import numpy as np
-from numpy.lib.function_base import average
-from numpy.ma.core import MaskedIterator
-import pandas as pd
-import math
 instLimit = 10000
 
 def getMyPosition (prcSoFar):
