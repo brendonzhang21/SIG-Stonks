@@ -1,12 +1,8 @@
-#!/usr/bin/env python
-
-# RENAME THIS FILE WITH YOUR TEAM NAME.
 import numpy as np
 from numpy.lib.function_base import average
 from numpy.ma.core import MaskedIterator
 import pandas as pd
 import math
-nInst = 100
 instLimit = 10000
 
 def loadPrices(fn):
@@ -34,11 +30,11 @@ def getMyPosition (prcSoFar):
             zscores.append(z)
 
             if z > 1:
-                rpos[instrument] = -10000/prcSoFar[instrument][nt-1]
+                rpos[instrument] = -instLimit/prcSoFar[instrument][nt-1]
             elif z < -1:
-                rpos[instrument] = 10000/prcSoFar[instrument][nt-1]
+                rpos[instrument] = instLimit/prcSoFar[instrument][nt-1]
             elif z < 0 or z > 0:
-                rpos[instrument] = -10000 * z / prcSoFar[instrument][nt-1]
+                rpos[instrument] = -instLimit * z / prcSoFar[instrument][nt-1]
             else: 
                 rpos[instrument] = 0
     return rpos
