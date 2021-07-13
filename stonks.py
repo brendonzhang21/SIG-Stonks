@@ -5,14 +5,6 @@ import pandas as pd
 import math
 instLimit = 10000
 
-def loadPrices(fn):
-    global nt, nInst
-    df= pd.read_csv(fn, sep='\s+', header=None, index_col=None)
-    nt, nInst = df.values.shape
-    return (df.values).T
-
-pricesFile="./prices250.txt"
-
 def getMyPosition (prcSoFar):
 
     (nins,nt) = prcSoFar.shape
