@@ -22,9 +22,8 @@ def getMyPosition (prcSoFar):
     (nins,nt) = prcSoFar.shape
     rpos = np.array([0 for i in range(100)])
 
-    #METHOD 2: calculate z score for each instrument and use it to determine positiion
     zscores = []
-    x = nt
+    x = 8
     for instrument in range(nins):
         if nt > 1:
             stdev = np.std(prcSoFar[instrument][nt - x:nt])
