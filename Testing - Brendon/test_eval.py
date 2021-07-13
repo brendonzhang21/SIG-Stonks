@@ -1,9 +1,11 @@
 # Same as eval but creates an output.txt file to help visualise results
 # Also I changed line 44 and 45 + commented out some other things
 # Original is the commented out line, new for loop i wrote so we can use out own data
+
+
 import numpy as np
 import pandas as pd
-from stonks import getMyPosition as getPosition
+from stonks2 import getMyPosition as getPosition
 import os
 
 # Algorithm testing file. 
@@ -41,7 +43,8 @@ def calcPL(prcHist):
     todayPLL = []
     (_,nt) = prcHist.shape
     f = open("output.txt", 'a')
-    for t in range(201,251):
+    # for t in range(201,251):
+    for t in range(1,251):
         prcHistSoFar = prcHist[:,:t]
         newPosOrig = getPosition(prcHistSoFar)
         curPrices = prcHistSoFar[:,-1] 
